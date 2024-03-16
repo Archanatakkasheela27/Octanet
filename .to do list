@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+   <div>
+    <h6>Add new</h6>
+    <input type="text" value="" size="6
+    9" maxlength="12">
+    <button onclick="add(this.previousElementSibling)" >Submit</button>
+    </div>
+    <ul id="yourList">
+      <li class="f" onclick="go(this)">be cool</li>
+      <li class="f" onclick="go(this)">learn javascript</li>
+      <li class="f" onclick="go(this)">learn figma</li>
+      <li class="f" onclick="go(this)">learn adobe</li>
+    </ul>
+        
+    </body>
+</html>
+ body {
+    
+}
+
+div {
+    position: relative;
+    left:25%;
+    top: 25px;
+}
+
+
+ul {
+    position: relative;
+    top: 75px;
+    border: 3px solid;
+    min-height: 200px;
+    letter-spacing: 3px;
+    box-shadow: 50px 20px;
+    padding: 20px;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 10px;
+}
+function add(input) {
+    let el = document.createElement("li");
+    el.innerText = input.value;
+    document.getElementById("yourList").appendChild(el);
+}
+
+
+/*function go() {
+    document.getElementByClassName("f").style.textDecoration = "underline overline";
+}*/
+
+function go(el) {
+    let lis = document.getElementsByClassName("f");
+    for(li of lis) li.style.textDecoration = "";
+    
+    el.style.textDecoration = "line-through";
+    }
